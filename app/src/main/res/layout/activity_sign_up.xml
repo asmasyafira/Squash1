@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/login_title"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="60dp"
+        android:gravity="center_horizontal"
+        android:text="SignUp Account"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="29dp"
+        android:textStyle="bold"
+        android:fontFamily="sans-serif-smallcaps"/>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rl_login"
+        android:layout_below="@+id/login_title"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="55dp"
+        android:background="@color/colorAccent"
+        android:elevation="4dp"
+        android:padding="20dp">
+
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="30dp">
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/email"
+                android:background="@drawable/btn"
+                android:drawableLeft="@drawable/ic_email_black_24dp"
+                android:drawablePadding="20dp"
+                android:drawableStart="@drawable/ic_email_black_24dp"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:hint="Email"
+                android:layout_marginTop="10dp"
+                android:inputType="textEmailAddress"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"/>
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/pass"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/btn"
+                android:drawableLeft="@drawable/ic_lock"
+                android:drawablePadding="20dp"
+                android:drawableStart="@drawable/ic_lock"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark"/>
+
+
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/btn"
+                android:drawableLeft="@drawable/ic_conformperson"
+                android:drawablePadding="20dp"
+                android:drawableStart="@drawable/ic_conformperson"
+                android:drawableTint="@color/colorPrimaryDark"
+                android:hint="Confirm Password"
+                android:inputType="textPersonName"
+                android:singleLine="true"
+                android:textColor="@color/colorPrimaryDark"
+                android:textColorHint="@color/colorPrimaryDark" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/btn_masuk"
+                android:layout_margin="22dp"
+                android:background="@drawable/bg_btn"
+                android:text="Daftar"
+                android:textAllCaps="false"
+                android:textColor="@color/colorAccent"
+                android:textSize="18sp"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/haveAkun"
+                android:gravity="center"
+                android:text="Already Have an account? SignIn"
+                android:textColor="@color/colorPrimaryDark"
+                android:textStyle="bold|italic"/>
+
+
+
+        </LinearLayout>
+    </RelativeLayout>
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:id="@+id/photo"
+        android:layout_below="@id/login_title"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/user_profile_image_background"
+        android:elevation="4dp"
+        android:src="@drawable/pumpkin"/>
+
+</RelativeLayout>
+
