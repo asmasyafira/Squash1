@@ -7,26 +7,26 @@
     tools:context=".SignInActivity">
 
     <TextView
+        android:id="@+id/login_title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/login_title"
-        android:layout_marginBottom="16dp"
         android:layout_marginTop="22dp"
+        android:layout_marginBottom="16dp"
         android:gravity="center_horizontal"
         android:text="Login Account"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="26dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <RelativeLayout
+        android:id="@+id/rl_login"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/rl_login"
         android:layout_below="@id/login_title"
-        android:layout_marginBottom="10dp"
         android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
         android:layout_marginTop="70dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="10dp"
         android:background="@color/colorAccent"
         android:elevation="4dp"
         android:padding="20dp">
@@ -38,65 +38,65 @@
             android:paddingTop="30dp">
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/email"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/email"
                 android:background="@drawable/btn"
+                android:drawableStart="@drawable/ic_email_black_24dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:drawablePadding="20dp"
-                android:drawableStart="@drawable/ic_email_black_24dp"
                 android:drawableTint="@color/colorPrimaryDark"
                 android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:singleLine="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryDark" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
+                android:id="@+id/pass"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/pass"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/btn"
+                android:drawableStart="@drawable/ic_lock"
                 android:drawableLeft="@drawable/ic_lock"
                 android:drawablePadding="20dp"
-                android:drawableStart="@drawable/ic_lock"
                 android:drawableTint="@color/colorPrimaryDark"
                 android:hint="Password"
                 android:inputType="textPassword"
                 android:singleLine="true"
                 android:textColor="@color/colorPrimaryDark"
-                android:textColorHint="@color/colorPrimaryDark"/>
+                android:textColorHint="@color/colorPrimaryDark" />
 
             <Button
+                android:id="@+id/btn_masuk"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/btn_masuk"
                 android:layout_margin="22dp"
                 android:background="@drawable/bg_btn"
                 android:text="Masuk"
                 android:textAllCaps="false"
                 android:textColor="@color/colorAccent"
-                android:textSize="18sp"/>
+                android:textSize="18sp" />
 
             <TextView
+                android:id="@+id/createAkun"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/createAkun"
                 android:gravity="center"
                 android:text="Not a member? Get registered now!"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="italic" />
 
             <TextView
+                android:id="@+id/tv_registeredSosmed"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_registeredSosmed"
                 android:layout_marginTop="50dp"
                 android:gravity="center"
                 android:text="Login with your social media account!"
                 android:textColor="@color/colorPrimaryDark"
-                android:textStyle="bold"/>
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -106,9 +106,9 @@
                 android:orientation="horizontal">
 
                 <Button
+                    android:id="@+id/loginWithGoogle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/loginWithGoogle"
                     android:background="#F14336"
                     android:drawableLeft="@drawable/google_logo"
                     android:drawablePadding="15dp"
