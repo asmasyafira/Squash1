@@ -1,28 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SettingActivity">
+    tools:context=".activities.SettingActivity">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_setting"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/item_list"/>
-
-    <Button
-        android:id="@+id/btn_masuk"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="22dp"
-        android:background="@drawable/bg_btn"
-        android:text="Start"
-        android:layout_below="@id/rv_setting"
-        android:textAllCaps="false"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp" />
-
-
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

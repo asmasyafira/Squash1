@@ -14,4 +14,5 @@
     <string name="id_name">Adrianne Walujo</string>
     <string name="id_name_mary">Mary</string>
     <string name="id_user_mary">drawingmary</string>
+    <string name="setting_option">Options</string>
 </resources>
