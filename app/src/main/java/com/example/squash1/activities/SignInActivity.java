@@ -1,10 +1,12 @@
 package com.example.squash1.activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.squash1.R;
+import com.example.squash1.model.SignInResponse;
+import com.example.squash1.network.ServiceClient;
+import com.example.squash1.network.ServiceGenerator;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
@@ -24,28 +29,75 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.rengwuxian.materialedittext.MaterialEditText;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class SignInActivity extends AppCompatActivity {
 
     private static final int RC_SIGN_IN = 123;
     private static final String TAG = "squash";
-
     GoogleSignInClient mGoogleSignInClient;
     FirebaseAuth fAuth;
 
     Button btnMasuk;
+    MaterialEditText etNameUser, etPassUser;
+    ProgressDialog progressDialog;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        etNameUser = findViewById(R.id.et_name_user);
+        etPassUser = findViewById(R.id.et_pass_user);
+
+        progressDialog = new ProgressDialog(this);
         btnMasuk = findViewById(R.id.btn_masuk);
         btnMasuk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(SignInActivity.this, GenreActivity.class);
-                startActivity(intent);
+                progressDialog.setMessage("Loading...");
+                progressDialog.show();
+
+                if (etNameUser.getText().toString().isEmpty()){
+                    progressDialog.dismiss();
+                    Toast.makeText(SignInActivity.this, "Nama pengguna tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (etPassUser.getText().toString().isEmpty()){
+                    progressDialog.dismiss();
+                    Toast.makeText(SignInActivity.this, "Password tidak boleh kosong", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String nameUser = etNameUser.getText().toString().trim().toUpperCase();
+                String pass = etPassUser.getText().toString().trim();
+
+                ServiceClient serviceClient = ServiceGenerator.createService(ServiceClient.class);
+
+                Call<SignInResponse> requestSignin = serviceClient.signinUser("loginUser", "login", nameUser, pass);
+                requestSignin.enqueue(new Callback<SignInResponse>() {
+                    @Override
+                    public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
+                        progressDialog.dismiss();
+                        if (response.body().getHasil().equals("success")){
+                            startActivity(new Intent(SignInActivity.this, GenreActivity.class));
+                            finish();
+                        } else {
+                            Toast.makeText(SignInActivity.this, "Login Gagal", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<SignInResponse> call, Throwable t) {
+                        progressDialog.dismiss();
+                        Toast.makeText(SignInActivity.this, "Koneksi Error", Toast.LENGTH_SHORT).show();
+                    }
+                });
             }
         });
 

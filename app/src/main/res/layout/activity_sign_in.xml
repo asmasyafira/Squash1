@@ -38,23 +38,23 @@
             android:paddingTop="30dp">
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/email"
-                android:layout_width="fill_parent"
+                android:id="@+id/et_name_user"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/btn"
                 android:drawableStart="@drawable/ic_email_black_24dp"
                 android:drawableLeft="@drawable/ic_email_black_24dp"
                 android:drawablePadding="20dp"
                 android:drawableTint="@color/colorPrimaryDark"
-                android:hint="Email"
-                android:inputType="textEmailAddress"
+                android:hint="Name User"
+                android:inputType="text"
                 android:singleLine="true"
                 android:textColor="@color/colorPrimaryDark"
                 android:textColorHint="@color/colorPrimaryDark" />
 
             <com.rengwuxian.materialedittext.MaterialEditText
-                android:id="@+id/pass"
-                android:layout_width="fill_parent"
+                android:id="@+id/et_pass_user"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/btn"
