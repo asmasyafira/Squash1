@@ -47,8 +47,8 @@
             app:text_font_size="6sp"
             app:vertical_spacing="@dimen/spacing_small" />
 
-        <include
-            layout="@layout/item_list"
+        <androidx.recyclerview.widget.RecyclerView
+            tools:listitem="@layout/item_list"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

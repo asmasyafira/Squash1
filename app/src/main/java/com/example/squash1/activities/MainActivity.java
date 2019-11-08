@@ -1,4 +1,4 @@
-package com.example.squash1;
+package com.example.squash1.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.squash1.R;
 import com.example.squash1.fragment.DiscoverFragment;
 import com.example.squash1.fragment.HomeFragment;
 import com.example.squash1.fragment.PostFragment;

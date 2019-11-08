@@ -1,10 +1,12 @@
-package com.example.squash1;
+package com.example.squash1.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+
+import com.example.squash1.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
@@ -18,7 +20,7 @@ public class SplashScreenActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(SplashScreenActivity.this, MainActivity.class);
+                Intent homeIntent = new Intent(SplashScreenActivity.this, SignUpActivity.class);
                 startActivity(homeIntent);
                 finish();
             }

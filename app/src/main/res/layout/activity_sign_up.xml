@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SignUpActivity">
+    tools:context=".activities.SignUpActivity">
 
     <TextView
         android:id="@+id/login_title"
@@ -106,6 +106,13 @@
                 android:text="Already Have an account? SignIn"
                 android:textColor="@color/colorPrimaryDark"
                 android:textStyle="bold|italic" />
+
+
+            <com.google.android.gms.common.SignInButton
+                android:id="@+id/signup_with_google"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_all" />
 
 
         </LinearLayout>
