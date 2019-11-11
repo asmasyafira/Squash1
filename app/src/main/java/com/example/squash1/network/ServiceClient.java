@@ -1,6 +1,6 @@
 package com.example.squash1.network;
 
-import com.example.squash1.model.SignInResponse;
+import com.example.squash1.Model.SignInResponse;
 
 import retrofit2.Call;
 import retrofit2.http.Field;
