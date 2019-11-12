@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1004101905411",
+    "firebase_url": "https://squash1-d61e7.firebaseio.com",
+    "project_id": "squash1-d61e7",
+    "storage_bucket": "squash1-d61e7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1004101905411:android:19fb2ceb5beb265822f236",
+        "android_client_info": {
+          "package_name": "com.example.squash1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1004101905411-4mtubhaetijo659bjughkmmpt4e0f1u9.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.squash1",
+            "certificate_hash": "70ab4ea791b56a11e56e2eb93ccf11412f43ae9a"
+          }
+        },
+        {
+          "client_id": "1004101905411-vcted6enusk0rsr8ccrbdqbhjnugudu7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8DkDS4dZFM7zWAOlphUTvJltaT6xdQd8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1004101905411-vcted6enusk0rsr8ccrbdqbhjnugudu7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

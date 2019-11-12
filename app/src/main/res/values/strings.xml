@@ -15,4 +15,39 @@
     <string name="id_name_mary">Mary</string>
     <string name="id_user_mary">drawingmary</string>
     <string name="setting_option">Options</string>
+
+    <string name="capt">Write Something For Capt</string>
+
+    <string-array name="home_name">
+        <item>Asma_syafira</item>
+        <item>Safina_jasmine</item>
+        <item>Bilqis</item>
+        <item>Arya_89</item>
+        <item>Zhacky_</item>
+        <item>Jennie</item>
+        <item>sooraa</item>
+        <item>real_pcy</item>
+        <item>zild_spooky</item>
+        <item>luneirix</item>
+        <item>drama_twitter</item>
+        <item>choco_asma</item>
+        <item>idn_schd</item>
+        <item>daarus</item>
+    </string-array>
+
+    <string-array name="home_image">
+        <item>@drawable/gambar_satu</item>
+        <item>@drawable/gambar_dua</item>
+        <item>@drawable/gambar_tiga</item>
+        <item>@drawable/gambar_empat</item>
+        <item>@drawable/gambar_lime</item>
+        <item>@drawable/gambar_enam</item>
+        <item>@drawable/gambar_tujuh</item>
+        <item>@drawable/gambar_delapan</item>
+        <item>@drawable/gambar_sembilan</item>
+        <item>@drawable/gambar_sepuluh</item>
+        <item>@drawable/gambar_sebelas</item>
+        <item>@drawable/gambar_duabelas</item>
+        <item>@drawable/gambar_empatbelas</item>
+    </string-array>
 </resources>
