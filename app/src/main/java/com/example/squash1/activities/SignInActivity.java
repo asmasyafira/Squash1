@@ -13,8 +13,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.squash1.Model.SignInResponse;
 import com.example.squash1.R;
-import com.example.squash1.model.SignInResponse;
 import com.example.squash1.network.ServiceClient;
 import com.example.squash1.network.ServiceGenerator;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;

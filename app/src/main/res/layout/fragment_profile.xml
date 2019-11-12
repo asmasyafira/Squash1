@@ -14,9 +14,9 @@
         android:id="@+id/rellay1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/toolbar"
         android:background="@drawable/grad"
-        android:paddingBottom="20dp"
-        android:layout_below="@id/toolbar">
+        android:paddingBottom="20dp">
 
         <RelativeLayout
             android:id="@+id/imgUser"
@@ -26,14 +26,17 @@
             android:layout_marginTop="20dp"
             android:background="@drawable/circle_border">
 
-            <ImageView
-                android:layout_width="120dp"
-                android:layout_height="120dp"
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/photo"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
                 android:layout_margin="9dp"
-                android:adjustViewBounds="true"
-                android:background="@drawable/circle"
-                android:padding="3dp"
-                android:scaleType="centerInside" />
+                android:layout_below="@+id/login_title"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/user_profile_image_background"
+                android:elevation="4dp"
+                android:src="@drawable/profile" />
 
         </RelativeLayout>
 
@@ -43,11 +46,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/imgUser"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="15sp"
+            android:layout_marginTop="1sp"
             android:fontFamily="sans-serif-light"
             android:text="Jasmine"
             android:textColor="@color/white"
-            android:textSize="32sp" />
+            android:textSize="28sp" />
 
         <TextView
             android:id="@+id/tv_address"
@@ -58,8 +61,8 @@
             android:fontFamily="sans-serif"
             android:text="new york, usa"
             android:textAllCaps="true"
-            android:textColor="@color/address"
-            android:textSize="14sp" />
+            android:textColor="@color/white"
+            android:textSize="12sp" />
     </RelativeLayout>
 
     <LinearLayout
@@ -90,8 +93,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="453K"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -100,7 +103,7 @@
                     android:text="followers"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -127,8 +130,8 @@
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-light"
                     android:text="0"
-                    android:textSize="25sp"
-                    android:textColor="@color/white"/>
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -137,7 +140,7 @@
                     android:text="following"
                     android:textAllCaps="true"
                     android:textColor="@color/white"
-                    android:textSize="13sp" />
+                    android:textSize="12sp" />
 
             </LinearLayout>
 
@@ -145,18 +148,11 @@
 
     </LinearLayout>
 
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/linlay1">
+        android:layout_height="wrap_content">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+    </LinearLayout>
 
-        </LinearLayout>
-
-    </RelativeLayout>
 
 </RelativeLayout>
