@@ -13,7 +13,7 @@
         android:padding="5dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/ci_list"
+            android:id="@+id/ci_list_genre"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_margin="16dp"
@@ -23,12 +23,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@id/ci_list"
-            android:layout_toRightOf="@id/ci_list"
+            android:layout_toEndOf="@id/ci_list_genre"
+            android:layout_toRightOf="@id/ci_list_genre"
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_name"
+                android:id="@+id/tv_name_genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -38,7 +38,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/tv_desc"
+                android:id="@+id/tv_desc_genre"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/activity_vertical_margin"

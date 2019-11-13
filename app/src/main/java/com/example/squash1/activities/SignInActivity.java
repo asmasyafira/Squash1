@@ -6,15 +6,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.squash1.Model.SignInResponse;
 import com.example.squash1.R;
+import com.example.squash1.SharedPreferencesManager;
+import com.example.squash1.model.SignInResponse;
 import com.example.squash1.network.ServiceClient;
 import com.example.squash1.network.ServiceGenerator;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -46,7 +46,7 @@ public class SignInActivity extends AppCompatActivity {
     MaterialEditText etNameUser, etPassUser;
     ProgressDialog progressDialog;
 
-
+    SharedPreferencesManager sharedPreferencesManager;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +54,12 @@ public class SignInActivity extends AppCompatActivity {
 
         etNameUser = findViewById(R.id.et_name_user);
         etPassUser = findViewById(R.id.et_pass_user);
+        sharedPreferencesManager = new SharedPreferencesManager(this);
+
+        if (sharedPreferencesManager.getSpSigned()) {
+            startActivity(new Intent(SignInActivity.this, GenreActivity.class));
+            finish();
+        }
 
         progressDialog = new ProgressDialog(this);
         btnMasuk = findViewById(R.id.btn_masuk);
@@ -85,8 +91,10 @@ public class SignInActivity extends AppCompatActivity {
                     public void onResponse(Call<SignInResponse> call, Response<SignInResponse> response) {
                         progressDialog.dismiss();
                         if (response.body().getHasil().equals("success")){
+                            sharedPreferencesManager.saveSpBoolean(SharedPreferencesManager.SP_SIGNED, true);
                             startActivity(new Intent(SignInActivity.this, GenreActivity.class));
                             finish();
+
                         } else {
                             Toast.makeText(SignInActivity.this, "Login Gagal", Toast.LENGTH_SHORT).show();
                         }

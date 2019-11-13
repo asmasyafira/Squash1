@@ -3,6 +3,7 @@ package com.example.squash1.activities;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -71,6 +72,19 @@ public class MainActivity extends AppCompatActivity {
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.bottom_nav_menu, menu);
         return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.option_language) {
+
+            Intent i = new Intent(Settings.ACTION_LOCALE_SETTINGS);
+            startActivity(i);
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
 }

@@ -1,7 +1,6 @@
 <resources>
     <string name="app_name">Squash1</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="name">agatha_chelsea</string>
 
@@ -17,6 +16,7 @@
     <string name="setting_option">Options</string>
 
     <string name="capt">Write Something For Capt</string>
+    <string name="setting_language">Language</string>
 
     <string-array name="home_name">
         <item>Asma_syafira</item>
@@ -49,5 +49,24 @@
         <item>@drawable/gambar_sebelas</item>
         <item>@drawable/gambar_duabelas</item>
         <item>@drawable/gambar_empatbelas</item>
+    </string-array>
+
+    <string-array name="home_desc">
+        <item>The dramatisation of one of the most notorious killing sprees in British history.</item>
+        <item>After a particle accelerator causes a freak storm, CSI Investigator Barry Allen is struck by lightning and falls into a coma.
+            Months later he awakens with the power of super speed, granting him the ability to move through Central City like an unseen guardian angel. Though initially excited by his newfound powers, Barry is shocked to discover he is not the only \"meta-human\" who was created in the wake of the accelerator explosion -- and not everyone is using their new powers for good. Barry partners with S.T.A.R. Labs and dedicates his life to protect the innocent.
+            For now, only a few close friends and associates know that Barry is literally the fastest man alive, but it won\'t be long before the world learns what Barry Allen has become...The Flash</item>
+        <item>The science-fiction adventure follows two boys struggle to revive humanity after a mysterious crisis has left everyone in the world turned to stone for several millennia.</item>
+        <item>As regular high school students Taichi and Rin disappeared in a beam of light. When they came to, the two of them were already in a world of swords and magic. Finally getting away after experiencing an attack by monsters, following the suggestion of adventurers they headed on the path towards the guild. In the guild, the two of them found out that they possessed unbelievably powerful magic.
+            Thus the regular high school students transformed into the strongest cheats..</item>
+        <item>When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces, and one strange little girl.</item>
+        <item>Long ago in the mountains, a fighting master known as Gohan discovered a strange boy whom he named Goku. Gohan raised him and trained Goku in martial arts until he died. The young and very strong boy was on his own, but easily managed. Then one day, Goku met a teenage girl named Bulma, whose search for the dragon balls brought her to Goku\'s home.
+            Together, they set off to find all seven dragon balls in an adventure.</item>
+        <item>David Haller, AKA Legion, is a troubled young man who may be more than human. Diagnosed as schizophrenic, David has been in and out of psychiatric hospitals for years. But after a strange encounter with a fellow patient, he’s confronted with the possibility that the voices he hears and the visions he sees might be real.</item>
+        <item>Spoiled billionaire playboy Oliver Queen is missing and presumed dead when his yacht is lost at sea. He returns five years later a changed man, determined to clean up the city as a hooded vigilante armed with a bow.</item>
+        <item>Bell Cranell is a rookie adventurer and the sole member of his dirt-poor guild founded by the petite goddess Hestia. Adventurers come from far and wide looking to strike it big in the massive labyrinth known as Dungeon, located beneath the city of Orario. Bell is more interested in picking up girls than Dungeon-crawling, but his reality check comes sooner than expected. Saved from a brush with death by the beautiful,
+            renowned adventurer Aiz Wallenstein, Bell falls head-over-heels and sets his sights on winning her heart, but she\'s not the only woman he\'s caught the attention of, for better of worse.</item>
+        <item>To carry out the biggest heist in history, a mysterious man called The Professor recruits a band of eight robbers who have a single characteristic: none of them has anything to lose. Five months of seclusion - memorizing every step, every detail, every probability - culminate in eleven days locked up in the National Coinage and Stamp Factory of Spain, surrounded by police forces and with dozens of hostages in their power, to find out whether their suicide wager will lead to everything or nothing.</item>
+        <item>Saitama is a hero who only became a hero for fun. After three years of “special” training, though, he’s become so strong that he’s practically invincible. In fact, he’s too strong—even his mightiest opponents are taken out with a single punch, and it turns out that being devastatingly powerful is actually kind of a bore. With his passion for being a hero lost along with his hair, yet still faced with new enemies every day, how much longer can he keep it going?</item>
     </string-array>
 </resources>

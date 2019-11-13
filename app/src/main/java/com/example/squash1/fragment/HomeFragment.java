@@ -7,11 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.example.squash1.Adapter;
-import com.example.squash1.DataHome;
+import com.example.squash1.adapter.HomeAdapter;
 import com.example.squash1.R;
 import com.example.squash1.activities.MainActivity;
-import com.example.squash1.model.HomeModel;
+import com.example.squash1.model.MainModel;
 
 import java.util.ArrayList;
 
@@ -24,12 +23,9 @@ import androidx.recyclerview.widget.RecyclerView;
  */
 public class HomeFragment extends Fragment {
 
-    private ArrayList<HomeModel> listHome;
-
-    String[] txtName;
+    RecyclerView recyclerView;
+    String[] txtName, txtDesc;
     int[] img;
-
-
 
     public HomeFragment() {
         // Required empty public constructor
@@ -37,36 +33,46 @@ public class HomeFragment extends Fragment {
         
     }
 
-    private ArrayList<HomeModel> list = new ArrayList<>();
-
-    private void showSelectedHome(HomeModel model) {
-        Intent send = new Intent(getContext(), MainActivity.class);
-
-    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View view = inflater.inflate(R.layout.fragment_home, container, false);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rvhome);
+        View view = inflater.inflate(R.layout.fragment_home, container, false);
+        recyclerView = view.findViewById(R.id.rvhome);
 
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-        Adapter adapter = new Adapter(list);
-        list.addAll(DataHome.getListData());
-        recyclerView.setAdapter(adapter);
+//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
+//        recyclerView.setLayoutManager(layoutManager);
+//        HomeAdapter adapter = new HomeAdapter(list);
+//        recyclerView.setAdapter(adapter);
 
-//        txtName = getResources().getStringArray(R.string.name)
+        txtName = getResources().getStringArray(R.array.home_name);
+        txtDesc = getResources().getStringArray(R.array.home_desc);
+        img = new int[]{
 
-        adapter.setOnItemClickCallback(new Adapter.OnItemClickCallback() {
-            @Override
-            public void onItemClicked(HomeModel data) {
-                showSelectedHome(data);
-            }
-        });
+                R.drawable.gambar_satu,
+                R.drawable.gambar_dua,
+                R.drawable.gambar_tiga,
+                R.drawable.gambar_empat,
+                R.drawable.gambar_lime,
+                R.drawable.gambar_enam,
+                R.drawable.gambar_tujuh,
+                R.drawable.gambar_delapan,
+                R.drawable.gambar_sembilan,
+                R.drawable.gambar_sepuluh,
+                R.drawable.gambar_sebelas,
+                R.drawable.gambar_duabelas,
+                R.drawable.gambar_tigabelas,
+                R.drawable.gambar_empatbelas
+        };
 
-            return view;
+        HomeAdapter homeAdapter = new HomeAdapter(txtName, txtDesc, img, getActivity());
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity().getApplicationContext()));
+        recyclerView.setAdapter(homeAdapter);
+
+
+        return view;
 
     }
 

@@ -8,10 +8,12 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.squash1.R;
+import com.example.squash1.SharedPreferencesManager;
 
 public class SignUpActivity extends AppCompatActivity {
 
     TextView tvHaveAkun;
+    SharedPreferencesManager sharedPreferencesManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,5 +29,12 @@ public class SignUpActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        sharedPreferencesManager = new SharedPreferencesManager(this);
+
+        if (sharedPreferencesManager.getSpSigned()) {
+            startActivity(new Intent(SignUpActivity.this, MainActivity.class));
+            finish();
+        }
     }
 }

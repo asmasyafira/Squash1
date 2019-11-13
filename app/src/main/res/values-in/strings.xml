@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> Squash1 </string>
+        
+    <string name="title_home"> Beranda </string>
+        
+    <string name="title_notifications"> Pemberitahuan </string>
+        
+    <string name="name"> agatha_chelsea </string>
+
+        
+    <string name="hello_blank_fragment"> Halo blank fragment </string>
+        
+    <string name="discover"> Temukan </string>
+        
+    <string name="post"> Unggah </string>
+        
+    <string name="profile"> Profil </string>
+        
+    <string name="id_user"> adriannewalujo.o </string>
+        
+    <string name="id_name"> Adrianne Walujo </string>
+        
+    <string name="id_name_mary"> Mary </string>
+        
+    <string name="id_user_mary"> drawingmary </string>
+        
+    <string name="setting_option"> Opsi </string>
+    <string name="setting_language"> Bahasa </string>
+    <string name="capt">Tuliskan sesuatu</string>
+
+</resources>
