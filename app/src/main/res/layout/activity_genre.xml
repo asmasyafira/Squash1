@@ -4,23 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".activities.GenreActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_genre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:listitem="@layout/item_list"/>
+        tools:listitem="@layout/item_genre" />
+
 
     <Button
         android:id="@+id/btn_mulai"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/rv_genre"
         android:layout_margin="22dp"
         android:background="@drawable/bg_btn"
         android:text="Start"
-        android:layout_below="@id/rv_genre"
         android:textAllCaps="false"
         android:textColor="@color/colorAccent"
         android:textSize="18sp" />

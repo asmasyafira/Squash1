@@ -41,11 +41,6 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.rvhome);
 
-//        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
-//        recyclerView.setLayoutManager(layoutManager);
-//        HomeAdapter adapter = new HomeAdapter(list);
-//        recyclerView.setAdapter(adapter);
-
         txtName = getResources().getStringArray(R.array.home_name);
         txtDesc = getResources().getStringArray(R.array.home_desc);
         img = new int[]{

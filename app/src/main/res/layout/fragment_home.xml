@@ -9,6 +9,9 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="35dp"
+        android:layout_marginRight="@dimen/margin_4"
+        android:layout_marginLeft="@dimen/margin_4"
         tools:listitem="@layout/item_home"
         android:id="@+id/rvhome" />
 

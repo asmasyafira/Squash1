@@ -57,7 +57,7 @@ public class SignInActivity extends AppCompatActivity {
         sharedPreferencesManager = new SharedPreferencesManager(this);
 
         if (sharedPreferencesManager.getSpSigned()) {
-            startActivity(new Intent(SignInActivity.this, GenreActivity.class));
+            startActivity(new Intent(SignInActivity.this, GenreFragment.class));
             finish();
         }
 

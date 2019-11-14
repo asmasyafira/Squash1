@@ -7,11 +7,16 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.squash1.R;
 import com.example.squash1.adapter.ProfileAdapter;
+import com.example.squash1.model.MainModel;
+
+import java.util.ArrayList;
 
 
 /**
@@ -23,6 +28,7 @@ public class ProfileFragment extends Fragment {
     String[] txtJudul;
     String[] txtDesc;
     int[] imgFrag;
+    private GridLayoutManager gridLayoutManager;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -58,8 +64,9 @@ public class ProfileFragment extends Fragment {
 
         ProfileAdapter profileAdapter = new ProfileAdapter(txtJudul, txtDesc, imgFrag, getActivity());
         recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 1, GridLayoutManager.HORIZONTAL, false));
         recyclerView.setAdapter(profileAdapter);
+        gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        recyclerView.setLayoutManager(gridLayoutManager);
 
         return view;
 
