@@ -14,6 +14,7 @@ import com.example.squash1.model.MainModel;
 
 import java.util.ArrayList;
 
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -26,6 +27,7 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     String[] txtName, txtDesc;
     int[] img;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -40,9 +42,9 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.rvhome);
-
         txtName = getResources().getStringArray(R.array.home_name);
         txtDesc = getResources().getStringArray(R.array.home_desc);
+
         img = new int[]{
 
                 R.drawable.gambar_satu,

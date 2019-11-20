@@ -5,13 +5,46 @@ import android.os.Parcelable;
 
 public class MainModel implements Parcelable {
     private String name;
+    private String photo;
     private String desc;
-    private int photo;
 
-    protected MainModel(Parcel in) {
+    public MainModel() {
+
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public static Creator<MainModel> getCREATOR() {
+        return CREATOR;
+    }
+
+    public MainModel(Parcel in) {
         name = in.readString();
+        photo = in.readString();
         desc = in.readString();
-        photo = in.readInt();
+
     }
 
     public static final Creator<MainModel> CREATOR = new Creator<MainModel>() {
@@ -26,30 +59,6 @@ public class MainModel implements Parcelable {
         }
     };
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public int getPhoto() {
-        return photo;
-    }
-
-    public void setPhoto(int photo) {
-        this.photo = photo;
-    }
-
     @Override
     public int describeContents() {
         return 0;
@@ -59,6 +68,6 @@ public class MainModel implements Parcelable {
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(name);
         dest.writeString(desc);
-        dest.writeInt(photo);
+        dest.writeString(photo);
     }
 }

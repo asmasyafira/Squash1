@@ -28,5 +28,7 @@
     <string name="setting_option"> Opsi </string>
     <string name="setting_language"> Bahasa </string>
     <string name="capt">Tuliskan sesuatu</string>
+    <string name="genre">Genre</string>
+    <string name="liked">Disukai</string>
 
 </resources>

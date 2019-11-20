@@ -7,9 +7,9 @@
     tools:context=".activities.SplashScreenActivity">
 
     <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/squashss"
-        android:scaleType="centerCrop"/>
+        android:layout_width="130dp"
+        android:layout_height="150dp"
+        android:src="@drawable/pumpkin2"
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

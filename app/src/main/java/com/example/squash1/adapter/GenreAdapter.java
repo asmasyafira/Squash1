@@ -26,8 +26,8 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
     int[] img;
     private CheckboxCheckedListener checkedListener;
 
-    public GenreAdapter(int[] imgIcon) {
-        this.img = imgIcon;
+    public GenreAdapter(int[] img) {
+        this.img = img;
     }
 
     @NonNull
@@ -43,7 +43,7 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (checkedListener != null) {
-
+                    checkedListener.getCheckBoxCheckedListener(position);
                 }
             }
         });
@@ -73,5 +73,13 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
 
     public interface CheckboxCheckedListener {
 
+        void getCheckBoxCheckedListener(int position);
     }
+
+    public void setCheckedListener(CheckboxCheckedListener checkedListener) {
+        this.checkedListener = checkedListener;
+    }
+
+
+
 }

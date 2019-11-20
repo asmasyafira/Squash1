@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -45,6 +46,7 @@ public class SignInActivity extends AppCompatActivity {
     Button btnMasuk;
     MaterialEditText etNameUser, etPassUser;
     ProgressDialog progressDialog;
+    TextView userRegis;
 
     SharedPreferencesManager sharedPreferencesManager;
     @Override
@@ -52,12 +54,19 @@ public class SignInActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
+        userRegis = findViewById(R.id.createAkun);
+        userRegis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(SignInActivity.this, SignUpActivity.class));
+            }
+        });
         etNameUser = findViewById(R.id.et_name_user);
         etPassUser = findViewById(R.id.et_pass_user);
         sharedPreferencesManager = new SharedPreferencesManager(this);
 
         if (sharedPreferencesManager.getSpSigned()) {
-            startActivity(new Intent(SignInActivity.this, GenreFragment.class));
+            startActivity(new Intent(SignInActivity.this, MainActivity.class));
             finish();
         }
 
@@ -92,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         if (response.body().getHasil().equals("success")){
                             sharedPreferencesManager.saveSpBoolean(SharedPreferencesManager.SP_SIGNED, true);
-                            startActivity(new Intent(SignInActivity.this, GenreActivity.class));
+                            startActivity(new Intent(SignInActivity.this, MainActivity.class));
                             finish();
 
                         } else {

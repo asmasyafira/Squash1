@@ -29,7 +29,7 @@ public class ProfileAdapter extends RecyclerView.Adapter<ProfileAdapter.ListView
     @NonNull
     @Override
     public ProfileAdapter.ListViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_profile, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_post_profile, viewGroup, false);
         return new ListViewHolder(view);
     }
 

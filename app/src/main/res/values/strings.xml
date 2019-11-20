@@ -4,7 +4,6 @@
     <string name="title_notifications">Notifications</string>
     <string name="name">agatha_chelsea</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="discover">Discover</string>
     <string name="post">Post</string>
@@ -17,8 +16,8 @@
 
     <string name="capt">Write Something For Capt</string>
     <string name="setting_language">Language</string>
-    <string name="choose_genre">Choose your favorite genre!</string>
     <string name="genre">Genre</string>
+    <string name="liked">Liked</string>
 
 
     <string-array name="home_name">

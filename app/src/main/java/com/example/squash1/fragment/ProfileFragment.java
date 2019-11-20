@@ -40,6 +40,7 @@ public class ProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
+
         recyclerView = view.findViewById(R.id.rv_frag_profile);
 
         txtJudul = getResources().getStringArray(R.array.home_name);
@@ -63,6 +64,7 @@ public class ProfileFragment extends Fragment {
         };
 
         ProfileAdapter profileAdapter = new ProfileAdapter(txtJudul, txtDesc, imgFrag, getActivity());
+
         recyclerView.setHasFixedSize(true);
         recyclerView.setAdapter(profileAdapter);
         gridLayoutManager = new GridLayoutManager(getContext(), 2);
