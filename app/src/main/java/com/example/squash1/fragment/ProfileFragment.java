@@ -1,22 +1,20 @@
 package com.example.squash1.fragment;
+
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.squash1.R;
+import com.example.squash1.activities.EditProfileActivity;
 import com.example.squash1.adapter.ProfileAdapter;
-import com.example.squash1.model.MainModel;
-
-import java.util.ArrayList;
 
 
 /**
@@ -29,6 +27,7 @@ public class ProfileFragment extends Fragment {
     String[] txtDesc;
     int[] imgFrag;
     private GridLayoutManager gridLayoutManager;
+    TextView tvEditProfile;
 
     public ProfileFragment() {
         // Required empty public constructor
@@ -42,6 +41,13 @@ public class ProfileFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_profile, container, false);
 
         recyclerView = view.findViewById(R.id.rv_frag_profile);
+        tvEditProfile = view.findViewById(R.id.tv_edit_profile);
+        tvEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getContext(), EditProfileActivity.class));
+            }
+        });
 
         txtJudul = getResources().getStringArray(R.array.home_name);
         txtDesc = getResources().getStringArray(R.array.home_desc);

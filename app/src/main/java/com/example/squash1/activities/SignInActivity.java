@@ -65,10 +65,10 @@ public class SignInActivity extends AppCompatActivity {
         etPassUser = findViewById(R.id.et_pass_user);
         sharedPreferencesManager = new SharedPreferencesManager(this);
 
-        if (sharedPreferencesManager.getSpSigned()) {
-            startActivity(new Intent(SignInActivity.this, MainActivity.class));
-            finish();
-        }
+//        if (sharedPreferencesManager.getSpSigned()) {
+//            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+//            finish();
+//        }
 
         progressDialog = new ProgressDialog(this);
         btnMasuk = findViewById(R.id.btn_masuk);
@@ -101,7 +101,7 @@ public class SignInActivity extends AppCompatActivity {
                         progressDialog.dismiss();
                         if (response.body().getHasil().equals("success")){
                             sharedPreferencesManager.saveSpBoolean(SharedPreferencesManager.SP_SIGNED, true);
-                            startActivity(new Intent(SignInActivity.this, MainActivity.class));
+                            startActivity(new Intent(SignInActivity.this, GenreActivity.class));
                             finish();
 
                         } else {
@@ -137,7 +137,7 @@ public class SignInActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        if (fAuth.getCurrentUser() != null){
+        if (fAuth.getCurrentUser() != null) {
             finish();
             startActivity(new Intent(this, MainActivity.class));
         }
@@ -167,9 +167,10 @@ public class SignInActivity extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()){
-                            Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = fAuth.getCurrentUser();
+                            Log.d(TAG, "signInWithCredential:Success");
+//                            FirebaseUser user = fAuth.getCurrentUser();
                             Toast.makeText(SignInActivity.this, "User Signed In", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(SignInActivity.this, MainActivity.class));
 
                         } else {
                             Log.w(TAG, "signInWithCredential:failure", task.getException());

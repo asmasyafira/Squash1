@@ -1,11 +1,14 @@
 package com.example.squash1.fragment;
 
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,11 +24,14 @@ import com.theartofdev.edmodo.cropper.CropImage;
 import java.io.File;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import butterknife.Unbinder;
 import pl.aprilapps.easyphotopicker.DefaultCallback;
 import pl.aprilapps.easyphotopicker.EasyImage;
 
+import static android.app.Activity.RESULT_CANCELED;
 import static android.app.Activity.RESULT_OK;
 
 
@@ -34,15 +40,9 @@ import static android.app.Activity.RESULT_OK;
  */
 public class PostFragment extends Fragment {
 
-    Context context;
-    Activity activity;
     ImageView imgPost;
     Button btnChooseImage, btnSend;
-    Unbinder unbinder;
-    private PostFragment postFragment;
 
-
-    private static final int REQUEST_CHOOSE_IMAGE = 3;
 
     public PostFragment() {
         // Required empty public constructor
@@ -55,8 +55,7 @@ public class PostFragment extends Fragment {
 
         View v = LayoutInflater.from(inflater.getContext()).inflate(R.layout.fragment_post, container, false);
 
-//        ButterKnife.bind(activity);
-//        unbinder = ButterKnife.bind(activity);
+
 
         btnSend = v.findViewById(R.id.btnSend);
         imgPost = v.findViewById(R.id.imgPost);
@@ -65,62 +64,38 @@ public class PostFragment extends Fragment {
         btnChooseImage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                EasyImage.openChooserWithGallery(PostFragment.this, "Choose Image", REQUEST_CHOOSE_IMAGE);
+                Intent intentGalery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(intentGalery, 2);
+
             }
         });
+
+        if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                Toast.makeText(getActivity(), "Permission Sudah di aktifkan", Toast.LENGTH_SHORT).show();
+            }
+
+        } else {
+            ActivityCompat.requestPermissions(getActivity(), new String[]{Manifest.permission.READ_EXTERNAL_STORAGE,
+                    Manifest.permission.CAMERA}, 1);
+        }
 
         return v;
     }
 
-    //bikin hasil
     @Override
-    public void onActivityResult(final int requestCode, int resultCode, @Nullable Intent data) {
-        EasyImage.handleActivityResult(requestCode, resultCode, data, getActivity(), new DefaultCallback() {
+    public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-            @Override
-            public void onImagePicked(File imageFile, EasyImage.ImageSource source, int type) {
-                CropImage.activity(Uri.fromFile(imageFile)).start(getActivity());
-            }
-
-            @Override
-            public void onImagePickerError(Exception e, EasyImage.ImageSource source, int type) {
-                super.onImagePickerError(e, source, type);
-
-                Toast.makeText(getActivity(),"tidak bisa ambil data",Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCanceled(EasyImage.ImageSource source, int type) {
-                super.onCanceled(source, type);
-            }
-        });
-
-        if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_REQUEST_CODE){
-            CropImage.ActivityResult result = CropImage.getActivityResult(data);
+        if (requestCode == 2) {
             if (resultCode == RESULT_OK){
-                final Uri resultUri= result.getUri();
-                Glide.with(this).load(new File(resultUri.getPath())).apply(new RequestOptions()).into(imgPost);
-
-                btnSend.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(Intent.ACTION_SEND);
-                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-                        intent.setType("image/*");
-                        intent.putExtra(Intent.EXTRA_STREAM, resultUri);
-                        startActivity(Intent.createChooser(intent, "Share Via"));
-                    }
-                });
-            } else  if (requestCode == CropImage.CROP_IMAGE_ACTIVITY_RESULT_ERROR_CODE){
-                Exception error = result.getError();
-                Toast.makeText(context, error.toString(), Toast.LENGTH_SHORT).show();
+                Uri uriImage = data.getData();
+                imgPost.setImageURI(uriImage);
+            } else if (resultCode == RESULT_CANCELED) {
+                Toast.makeText(getContext(), "Gagal Ambil Gambar", Toast.LENGTH_SHORT).show();
             }
         }
     }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-//        unbinder.unbind();
-    }
 }
+

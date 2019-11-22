@@ -30,5 +30,27 @@
     <string name="capt">Tuliskan sesuatu</string>
     <string name="genre">Genre</string>
     <string name="liked">Disukai</string>
+    <string name="name_user_profile">Jasmine</string>
+    <string name="address_user_profile">new york, usa</string>
+    <string name="edit_profile_user">Edit Profil</string>
+    <string name="change_language">Change Language</string>
+    <string name="logout">Log Out Account</string>
+    <string name="name_edit_profile">Name</string>
+    <string name="address_edit_profile">Address</string>
+    <string name="search">Search</string>
+    <string name="LogOut">Log Out</string>
+    <string name="edit_profile_logout">Log Out</string>
+    <string-array name="name_genre">
+        <item>Lukisan</item>
+        <item>Patung</item>
+        <item>Ukiran Batu</item>
+        <item>Fotografi</item>
+        <item>Seni Grafik</item>
+        <item>Topeng</item>
+        <item>Kaligrafi</item>
+        <item>Pahatan</item>
+        <item>Mosaik</item>
+        <item>Kerajinan Keramik</item>
+    </string-array>
 
 </resources>

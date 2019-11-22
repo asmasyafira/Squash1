@@ -15,6 +15,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/grad"
+            android:layout_marginTop="@dimen/margin_12"
             android:paddingBottom="20dp">
 
             <RelativeLayout
@@ -41,13 +42,13 @@
 
             <TextView
                 android:id="@+id/tv_name"
-            android:layout_width="wrap_content"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/imgUser"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="1sp"
                 android:fontFamily="sans-serif-light"
-                android:text="Jasmine"
+                android:text="@string/name_user_profile"
                 android:textColor="@color/white"
                 android:textSize="28sp" />
 
@@ -58,9 +59,22 @@
                 android:layout_below="@+id/tv_name"
                 android:layout_centerHorizontal="true"
                 android:fontFamily="sans-serif"
-                android:text="new york, usa"
+                android:text="@string/address_user_profile"
                 android:textAllCaps="true"
                 android:textColor="@color/white"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/tv_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_address"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:fontFamily="sans-serif"
+                android:text="@string/edit_profile_user"
+                android:textAllCaps="true"
+                android:textColor="@android:color/white"
                 android:textSize="12sp" />
         </RelativeLayout>
 
@@ -153,9 +167,9 @@
             android:id="@+id/tab_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@id/linlay1"
             android:padding="5dp"
-            app:layout_collapseMode="parallax"
-            android:layout_below="@id/linlay1">
+            app:layout_collapseMode="parallax">
 
 
             <com.google.android.material.tabs.TabItem

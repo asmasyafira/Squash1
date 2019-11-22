@@ -4,25 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".fragment.DiscoverFragment">
+    tools:context=".fragment.DiscoverFragment"
+    android:background="@color/colorPrimary">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-
-        <androidx.appcompat.widget.SearchView
-            android:id="@+id/search_discover"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@color/gradEnd"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
 
         <com.github.tommykw.tagview.TagView
@@ -39,16 +28,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/search_discover"
             app:left_drawable_padding="4dp"
             app:sort_type="asc"
             app:stroke_color="@color/gray"
             app:stroke_width="1dp"
             app:text_color="#000000"
             app:text_font_size="6sp"
-            app:vertical_spacing="@dimen/spacing_small" />
-
+            app:vertical_spacing="@dimen/spacing_small"
+            tools:ignore="MissingConstraints" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_genre_discover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/search_tag"
+        tools:listitem="@layout/item_discover_genre"
+        android:layout_marginBottom="75dp" />
+
 
 </RelativeLayout>

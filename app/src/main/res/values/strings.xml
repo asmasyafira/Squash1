@@ -18,6 +18,16 @@
     <string name="setting_language">Language</string>
     <string name="genre">Genre</string>
     <string name="liked">Liked</string>
+    <string name="name_user_profile">Jasmine</string>
+    <string name="address_user_profile">new york, usa</string>
+    <string name="edit_profile_user">Edit Profile</string>
+    <string name="change_language">Change Language</string>
+    <string name="logout">Log Out Account</string>
+    <string name="name_edit_profile">Name</string>
+    <string name="address_edit_profile">Address</string>
+    <string name="search">Search</string>
+    <string name="LogOut">Log Out</string>
+    <string name="edit_profile_logout">Log Out</string>
 
 
     <string-array name="home_name">
@@ -50,34 +60,6 @@
         <item>Ceramic Crafts</item>
     </string-array>
 
-    <string-array name="home_image">
-        <item>@drawable/gambar_satu</item>
-        <item>@drawable/gambar_dua</item>
-        <item>@drawable/gambar_tiga</item>
-        <item>@drawable/gambar_empat</item>
-        <item>@drawable/gambar_lime</item>
-        <item>@drawable/gambar_enam</item>
-        <item>@drawable/gambar_tujuh</item>
-        <item>@drawable/gambar_delapan</item>
-        <item>@drawable/gambar_sembilan</item>
-        <item>@drawable/gambar_sepuluh</item>
-        <item>@drawable/gambar_sebelas</item>
-        <item>@drawable/gambar_duabelas</item>
-        <item>@drawable/gambar_empatbelas</item>
-    </string-array>
-
-    <string-array name="icon_genre">
-        <item>@drawable/painting</item>
-        <item>@drawable/statue</item>
-        <item>@drawable/relief</item>
-        <item>@drawable/photography</item>
-        <item>@drawable/graphic</item>
-        <item>@drawable/mask</item>
-        <item>@drawable/caligraphy</item>
-        <item>@drawable/carving</item>
-        <item>@drawable/mozaik</item>
-        <item>@drawable/keramik</item>
-    </string-array>
 
     <string-array name="home_desc">
         <item>The dramatisation of one of the most notorious killing sprees in British history.</item>

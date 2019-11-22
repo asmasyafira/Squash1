@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -19,6 +21,7 @@ import com.bumptech.glide.Glide;
 import com.example.squash1.R;
 import com.example.squash1.model.MainModel;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> {
@@ -63,10 +66,12 @@ public class GenreAdapter extends RecyclerView.Adapter<GenreAdapter.ViewHolder> 
         ImageView imgIcon;
         CheckBox checkBox;
 
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             checkBox = itemView.findViewById(R.id.cb_genre);
             imgIcon = itemView.findViewById(R.id.img_genre);
+
         }
 
     }

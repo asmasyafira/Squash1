@@ -11,8 +11,11 @@ import com.example.squash1.adapter.HomeAdapter;
 import com.example.squash1.R;
 import com.example.squash1.activities.MainActivity;
 import com.example.squash1.model.MainModel;
+import com.example.squash1.network.ServiceClient;
+import com.example.squash1.network.ServiceGenerator;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -27,6 +30,9 @@ public class HomeFragment extends Fragment {
     RecyclerView recyclerView;
     String[] txtName, txtDesc;
     int[] img;
+    private HomeAdapter homeAdapter;
+    private ServiceClient serviceClient;
+//    private List<>
 
 
     public HomeFragment() {
@@ -42,6 +48,8 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         recyclerView = view.findViewById(R.id.rvhome);
+        serviceClient = ServiceGenerator.createService(ServiceClient.class);
+//        homeAdapter = new HomeAdapter(this, )
         txtName = getResources().getStringArray(R.array.home_name);
         txtDesc = getResources().getStringArray(R.array.home_desc);
 
